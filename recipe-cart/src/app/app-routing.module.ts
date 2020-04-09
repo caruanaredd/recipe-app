@@ -16,7 +16,7 @@ const routes: Routes = [
     loadChildren: () => import('./recipe/recipe-tabs/recipe-tabs.module').then( m => m.RecipeTabsPageModule)
   },
   {
-    path: 'recipe-summary',
+    path: 'recipe-summary', // http://localhost:8100/recipe-summary
     loadChildren: () => import('./recipe/recipe-summary/recipe-summary.module').then( m => m.RecipeSummaryPageModule)
   },
   {
