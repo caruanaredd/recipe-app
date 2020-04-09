@@ -1,9 +1,35 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>recipe-directions</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <!-- ion-buttons will sort the buttons according to slot (start, middle, end). -->
+        <ion-buttons slot="start">
+            <!-- will adapt the styling to fit the toolbar, IF it is in ion-buttons. -->
+            <ion-button>
+                <!-- icon-only will make this icon bigger and have a round ripple effect. -->
+                <ion-icon name="arrow-back" slot="icon-only"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+
+        <ion-title>Recipe</ion-title>
+
+        <ion-buttons slot="end">
+            <ion-button>
+                <ion-icon name="heart" slot="icon-only" color="danger"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <ion-list lines="full" id="directions">
+        <ion-item>
+            <ion-label slot="start"></ion-label>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim necessitatibus facilis eos error in dolore tempora amet accusamus voluptates, repudiandae eum omnis dolorem deleniti! Rem, rerum perferendis. Blanditiis, suscipit beatae.</p>
+        </ion-item>
 
+        <!-- for testing -->
+        <ion-item>
+            <ion-label slot="start"></ion-label>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim necessitatibus facilis eos error in dolore tempora amet accusamus voluptates, repudiandae eum omnis dolorem deleniti! Rem, rerum perferendis. Blanditiis, suscipit beatae.</p>
+        </ion-item>
+    </ion-list>
 </ion-content>

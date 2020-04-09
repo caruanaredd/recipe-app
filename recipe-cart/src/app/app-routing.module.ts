@@ -24,7 +24,7 @@ const routes: Routes = [
     loadChildren: () => import('./recipe/recipe-ingredients/recipe-ingredients.module').then( m => m.RecipeIngredientsPageModule)
   },
   {
-    path: 'recipe-directions',
+    path: 'recipe-directions', // http://localhost:8100/recipe-directions
     loadChildren: () => import('./recipe/recipe-directions/recipe-directions.module').then( m => m.RecipeDirectionsPageModule)
   }
 ];
