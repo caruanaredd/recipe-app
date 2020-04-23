@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'recipe',
     pathMatch: 'full'
   },
   {
@@ -14,8 +14,14 @@ const routes: Routes = [
 
   // The parent page for all recipe interfaces.
   {
-    path: 'recipe', // http://localhost:8100/recipe-tabs
+    path: 'recipe',
     children: [
+        // http://localhost:8100/recipe
+        {
+            path: '',
+            loadChildren: () => import('./recipe/recipe-home/recipe-home.module').then( m => m.RecipeHomePageModule)
+        },
+
         // http://localhost:8100/recipe/view
         {
             // This is the path nested under /recipe
@@ -36,6 +42,10 @@ const routes: Routes = [
   {
     path: 'recipe-directions', // http://localhost:8100/recipe-directions
     loadChildren: () => import('./recipe/recipe-directions/recipe-directions.module').then( m => m.RecipeDirectionsPageModule)
+  },
+  {
+    path: 'recipe-home', // http://localhost:8100/recipe-home
+    loadChildren: () => import('./recipe/recipe-home/recipe-home.module').then( m => m.RecipeHomePageModule)
   }
 ];
 
