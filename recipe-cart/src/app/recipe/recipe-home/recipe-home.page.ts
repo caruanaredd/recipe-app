@@ -9,6 +9,16 @@ import { RecipeService } from 'src/app/services/recipe.service';
 export class RecipeHomePage implements OnInit
 {
     /**
+     * The categories available to this interface.
+     */
+    public categories: any[] = [];
+
+    /**
+     * The recipes available to this interface.
+     */
+    public recipes: any[] = [];
+
+    /**
      * The category slider options.
      */
     public categorySlideOpts = {
@@ -26,10 +36,17 @@ export class RecipeHomePage implements OnInit
         public recipeService: RecipeService
     ) { }
 
-    ngOnInit()
+    // use async whenever there is dynamic data that is loaded into the page/app.
+    async ngOnInit()
     {
         console.log("Starting to load...");
-        this.recipeService.preload();
+
+        // we'll wait for the function to complete before the app is shown.
+        await this.recipeService.preload();
+
+        this.categories = this.recipeService.getCategories();
+        this.recipes = this.recipeService.getRecipes(true, 5);
+        
         console.log("Finished.");
     }
 
