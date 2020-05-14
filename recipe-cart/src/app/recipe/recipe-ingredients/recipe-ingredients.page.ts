@@ -1,15 +1,26 @@
 import { Component, OnInit } from '@angular/core';
+import { CacheService } from 'src/app/services/cache.service';
 
 @Component({
   selector: 'app-recipe-ingredients',
   templateUrl: './recipe-ingredients.page.html',
   styleUrls: ['./recipe-ingredients.page.scss'],
 })
-export class RecipeIngredientsPage implements OnInit {
+export class RecipeIngredientsPage implements OnInit
+{
+    /**
+     * The recipe information available to this page.
+     */
+    public recipe: any = null;
 
-  constructor() { }
+    constructor(
+        private cacheService: CacheService
+    ) { }
 
-  ngOnInit() {
-  }
+    ngOnInit()
+    {
+        this.recipe = this.cacheService.get();
+        console.log(this.recipe.ingredient);
+    }
 
 }

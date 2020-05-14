@@ -97,6 +97,19 @@ export class RecipeService
     }
 
     /**
+     * Checks that the recipe data is valid.
+     * @param recipe The recipe to check.
+     */
+    public checkRecipe(recipe: any): boolean
+    {
+        // if there are no attributes in the object (loaded from XML)
+        if (!recipe.attr) return false;
+        if (!recipe.attr.name || !recipe.attr.url) return false;
+        
+        return true;
+    }
+
+    /**
      * Creates an array of categories from the data list.
      */
     public getCategories()
@@ -112,6 +125,39 @@ export class RecipeService
         // identically and individually.
         // in this example, we want to retrieve the name of our categories.
         return this._data.category.map(c => c.attr.name);
+    }
+
+    /**
+     * Retrieves a recipe from the data available.
+     * @param url The unique identifier for this recipe.
+     */
+    public getRecipe(url: string)
+    {
+        // Alternative for: find(c => c.recipe.find(r => r.attr.url == url))
+        // for (var c = 0; c < this._data.category.length; c++)
+        // {
+        //     var category = this._data.category[c];
+        // Alternative for: c.recipe.find(r => r.attr.url == url)
+        //     for (var i = 0; i < category.recipe.length; i++)
+        //     {
+        //         var recipe = category.recipe[i];
+        //         if (recipe.attr.url == url)
+        //         {
+        //             return category;
+        //         }
+        //     }
+        // }
+
+        // Finds the category containing the recipe we want.
+        var category = this._data.category.find(c => c.recipe.find(r => r.attr.url == url));
+        
+        // The category (if found) will always have one recipe item inside.
+        var recipe = category.recipe.find(r => r.attr.url == url);
+
+        // Reassign the category name so that we can access it in the component.
+        recipe.attr.category = category.attr.name;
+
+        return recipe;
     }
 
     /**
@@ -147,7 +193,9 @@ export class RecipeService
             // to sort in a random order
             // calculate a number from 0 - 1 (which might include 0.5, 0.3, etc)
             // when we subtract 0.5 from this number, it will randomize the order of the array.
-            recipes = recipes.sort(() => 0.5 - Math.random());
+            recipes = recipes.sort(
+                () => 0.5 - Math.random()
+            );
         }
 
         // if we want to reduce the number of items,

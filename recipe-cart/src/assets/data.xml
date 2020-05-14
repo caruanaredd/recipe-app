@@ -2,6 +2,66 @@
 
 <data updated="2020-04-30">
     <category name="Curries">
+        <recipe name="Test Recipe" url="test-recipe">
+            <ingredient>
+                <name>Chicken Thigh</name>
+                <measurement type="g">500</measurement>
+            </ingredient>
+
+            <ingredient>
+                <name>Tinned Chopped Tomatoes</name>
+                <measurement type="ml">300</measurement>
+            </ingredient>
+
+            <ingredient>
+                <name>Large White Onion</name>
+                <measurement type="units">1</measurement>
+            </ingredient>
+
+            <ingredient>
+                <name>Garam Masala</name>
+                <measurement type="tbsp">2</measurement>
+            </ingredient>
+
+            <ingredient>
+                <name>Tomato Puree</name>
+                <measurement type="tbsp">2</measurement>
+            </ingredient>
+
+            <ingredient>
+                <name>Paprika</name>
+                <measurement type="tbsp">2</measurement>
+            </ingredient>
+
+            <ingredient>
+                <name>Turmeric</name>
+                <measurement type="tbsp">2</measurement>
+            </ingredient>
+
+            <ingredient>
+                <name>Garlic</name>
+                <measurement type="tbsp">2</measurement>
+            </ingredient>
+
+            <ingredient>
+                <name>Chilli Flakes</name>
+                <measurement type="tsp">2</measurement>
+            </ingredient>
+
+            <ingredient>
+                <name>Greek Yogurt</name>
+                <measurement type="cup">1</measurement>
+            </ingredient>
+
+            <direction>Remove visible fat from the chicken and cut into large pieces. Add to the slow cooker.</direction>
+            <direction>Chop onion and soften in an oiled frying pan.</direction>
+            <direction>Add all spices into the slow cooker.</direction>
+            <direction>Add Garlic and Chilli.</direction>
+            <direction>Add Choppend and Pureed Tomatoes.</direction>
+            <direction>Slow cook for 6 hours and ensure chicken is cooked through.</direction>
+            <direction>Stir in fat free yogurt in the last 30 minutes.</direction>
+        </recipe>
+
         <recipe name="Chicken Tikka Masala" url="chicken-tikka-masala" serves="4" duration="420" description="This rich and creamy flavoursome Chicken tikka rivals any Indian restaurant! Why go out when you can make it better at home! With aromatic golden chicken pieces swimming in an incredible curry sauce, this Chicken Tikka Masala recipe is one of the best you will try!">
             <ingredient>
                 <name>Chicken Thigh</name>
@@ -64,7 +124,7 @@
     </category>
 
     <category name="Fakeaways">
-        <recipe name="Hoisin Chicken" url="hoisin-chicken" serving="4" duration="20" description="Using store-bought hoisin sauce makes this chicken stir-fry easy and fast. You can substitute any quick-cooking vegetable, such as mushrooms, thinly sliced carrots, or broccoli florets. Round out the meal with Steamed White Rice.">
+        <recipe name="Hoisin Chicken" url="hoisin-chicken" serves="4" duration="20" description="Using store-bought hoisin sauce makes this chicken stir-fry easy and fast. You can substitute any quick-cooking vegetable, such as mushrooms, thinly sliced carrots, or broccoli florets. Round out the meal with Steamed White Rice.">
             <ingredient>
                 <name>Vegetable Oil</name>
                 <measurement type="tbsp">3</measurement>

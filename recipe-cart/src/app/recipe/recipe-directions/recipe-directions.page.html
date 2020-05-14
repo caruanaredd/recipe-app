@@ -1,16 +1,11 @@
-<app-recipe-header></app-recipe-header>
+<app-recipe-header
+    [title]="recipe.attr.name"></app-recipe-header>
 
 <ion-content>
     <ion-list lines="full" id="directions">
-        <ion-item>
+        <ion-item *ngFor="let direction of recipe.direction">
             <ion-label slot="start"></ion-label>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim necessitatibus facilis eos error in dolore tempora amet accusamus voluptates, repudiandae eum omnis dolorem deleniti! Rem, rerum perferendis. Blanditiis, suscipit beatae.</p>
-        </ion-item>
-
-        <!-- for testing -->
-        <ion-item>
-            <ion-label slot="start"></ion-label>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim necessitatibus facilis eos error in dolore tempora amet accusamus voluptates, repudiandae eum omnis dolorem deleniti! Rem, rerum perferendis. Blanditiis, suscipit beatae.</p>
+            <p>{{ direction }}</p>
         </ion-item>
     </ion-list>
 </ion-content>
